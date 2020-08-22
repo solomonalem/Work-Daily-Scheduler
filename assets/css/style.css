@@ -1,24 +1,63 @@
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "lato", sans-serif;
   font-size: 16px;
   line-height: 1;
+}
+
+p {
+  height: 79px;
+  font-size: 1.1rem;
+}
+.logo {
+  transform: skewY(-11deg);
+  background-color: rgb(3, 100, 180);
+  /* clip-path: circle(50% at 50% 50%); */
+  padding: 0.5rem;
+  border-radius: 50%;
+  box-shadow: 1px 0px 10px 3px rgb(64, 133, 211);
+  margin-right: -0.2rem;
+  font-weight: 500;
+  color: rgb(91, 149, 214);
+}
+.logo-text {
+  color: hsl(177, 66%, 71%);
+  font-weight: 500;
+  text-shadow: 1px 2px 20px rgb(20, 116, 160);
+  font-family: "Thasadith";
+  font-size: 2.5rem;
 }
 
 textarea {
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
-  border-left: 1px solid black;
+  color: #2c2b2b;
+  border: 1px solid rgb(255, 255, 255);
   padding: 10px;
+  height: 79px;
 }
 
 .jumbotron {
+  display: flex;
+  justify-content: space-between;
   text-align: center;
-  background-color: transparent;
+  /* background-color: transparent; */
   color: black;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: 2px solid rgb(3, 93, 196);
+  max-height: 40vh;
+  margin-bottom: 5rem;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgb(2, 53, 119) 0%,
+    rgba(4, 109, 191, 1) 44%,
+    rgba(3, 123, 202, 1) 68%,
+    rgb(6, 74, 153) 79%,
+    rgb(0, 19, 124) 97%,
+    rgb(3, 30, 121) 100%
+  );
 }
 
 .description {
@@ -32,10 +71,15 @@ textarea {
 
 .row {
   white-space: pre-wrap;
-  height: 80px;
+  max-height: 80px;
   border-top: 1px solid white;
-  /* test ---------------- */
-  background-color: rgb(157, 164, 223);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  
+  font-size: 0.9rem;
+}
+.row:hover {
+  transform:scale(1.004)
 }
 
 .hour {
@@ -60,20 +104,67 @@ textarea {
 }
 
 .saveBtn {
-  border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: #06aed5;
+  border-left: 1px solid rgb(245, 237, 237);
+
+  background: linear-gradient(
+    90deg,
+    rgb(13, 3, 199) 0%,
+    rgb(16, 93, 194) 0%,
+    rgba(4, 109, 191, 1) 44%,
+    rgba(3, 123, 202, 1) 68%,
+    rgba(3, 133, 210, 1) 79%,
+    rgb(27, 111, 180) 97%,
+    rgb(26, 119, 206) 100%
+  );
   color: white;
+  padding: 0;
+  outline: hidden;
+  max-height: 79px;
 }
 
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
-.lol {
-  background-color: rgb(114, 6, 6);
+button {
+  border: 1px solid rgb(150, 210, 228);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
-.bb {
-  background-color: rgb(158, 12, 12);
+
+.circle {
+  height: 8rem;
+  width: 8rem;
+  border-radius: 50%;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgb(2, 50, 112) 0%,
+    rgba(4, 109, 191, 1) 44%,
+    rgba(3, 123, 202, 1) 68%,
+    rgba(3, 133, 210, 1) 79%,
+    rgb(2, 177, 221) 97%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
+#currentTime {
+  font-family: "Thasadith";
+  color: rgb(68, 130, 201);
+}
+#currentDay {
+  font-family: "Thasadith";
+  color: rgb(210, 233, 252);
+}
+/* --------- footer ------------- */
+footer {
+  bottom: 0;
+  margin-top: 5rem;
+  padding: 3rem;
+  background-color: rgb(85, 96, 151);
+  opacity: 0.7rem;
+}
+footer div h1 {
+  font-size: 0.9rem;
+  color: rgb(140, 191, 214);
+}
+

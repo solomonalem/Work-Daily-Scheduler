@@ -14,8 +14,14 @@
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     />
+
+    <!-- google-fonts--- -->
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Thasadith:ital,wght@0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    /> -->
     <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Open+Sans:wght@600;700&family=Thasadith:ital,wght@0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
@@ -24,14 +30,32 @@
 
   <body>
     <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
+      <div class="circle .d-md-none .d-lg-block"></div>
+      <div>
+        <h1 class="display-4">
+          <span class="logo">W</span>ork Day <br /><span class="logo-text"
+            >Scheduler</span
+          >
+        </h1>
+      </div>
+      <div class="day-time-container">
+        <p id="currentDay" class="lead">DAY</p>
+        <p id="currentTime" class="lead">TIME</p>
+      </div>
     </header>
+     <!--------- main ----------------------- -->
     <div class="container">
-      <!-- Timeblocks go here -->
-      <button class="btn">press</button>
+      <div class="row">
+        <ul id="list-done" class="list-group"></ul>
+      </div>
     </div>
+
+    <!--------- footer ----------------------- -->
+    <footer class="footer">
+      <div>
+        <h6><span class="logo">W</span>ork Day <span>Scheduler</span></h6>
+      </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
