@@ -65,25 +65,25 @@ var loadPlans = function () {
     planInput.trigger("focus");
   });
 
-  // $(".row").on("click", "button", function () {
-  //   // get the textarea's current value/text
-  //   var text = $(this).siblings(".description").val().trim();
-  //   console.log(text);
+  $(".row").on("click", "button", function () {
+    // get the textarea's current value/text
+    var text = $(this).siblings(".description").val().trim();
+    console.log(text);
 
-  //   // get the parent row data-id attribute
-  //   var index = $(this).closest(".row").attr("data-id");
-  //   console.log(index);
+    // get the parent row data-id attribute
+    var index = $(this).closest(".row").attr("data-id");
+    console.log(index);
 
-  //   //save item to localStorage
-  //   localStorage.setItem(index, text);
+    //save item to localStorage
+    localStorage.setItem(index, text);
 
-  //   var eventDescription = $("<p>")
-  //     .addClass("description col-sm-9 p-3")
-  //     .text(text);
+    var eventDescription = $("<p>")
+      .addClass("description col-sm-9 p-3")
+      .text(text);
 
-  //   // replace textarea with p element
-  //   $(this).siblings(".description").replaceWith(eventDescription);
-  // });
+    // replace textarea with p element
+    $(this).siblings(".description").replaceWith(eventDescription);
+  });
 
   // // ------------- --------------------------------------Current -time
   // var currentTImeAndDate = moment().format("LL");
@@ -93,7 +93,7 @@ var loadPlans = function () {
 // setInterval(function () {
 //   var currentTime=moment().format("hh:mm:ss A");
 //   $("#currentTime").text(currentTime);
-  
+
 //   }
 // , 1000);
 
