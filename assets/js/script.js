@@ -85,16 +85,15 @@ var loadPlans = function () {
     $(this).siblings(".description").replaceWith(eventDescription);
   });
 
-  // // ------------- --------------------------------------Current -time
-  // var currentTImeAndDate = moment().format("LL");
-  // $("#currentDay").text(currentTImeAndDate);
+  // ------------- --------------------------------------Current -time
+  var currentTImeAndDate = moment().format("LL");
+  $("#currentDay").text(currentTImeAndDate);
 };
 
-// setInterval(function () {
-//   var currentTime=moment().format("hh:mm:ss A");
-//   $("#currentTime").text(currentTime);
-
-//   }
-// , 1000);
+// call moment every second to update the time;
+setInterval(function () {
+  var currentTime = moment().format("hh:mm:ss A");
+  $("#currentTime").text(currentTime);
+}, 1000);
 
 loadPlans();
