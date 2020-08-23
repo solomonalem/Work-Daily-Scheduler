@@ -1,5 +1,5 @@
 var loadPlans = function () {
-  for (var i = 15; i <= 23; i++) {
+  for (var i = 9; i <= 17; i++) {
     // change i to start counting from 0
     var planId = parseInt(`${i - 9}`);
 
