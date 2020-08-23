@@ -7,8 +7,10 @@ body {
 p {
   height: 79px;
   font-size: 1.1rem;
+  color: #000000 !important;
 }
 
+/* -----------  HEADER ---------------------- */
 .logo {
   transform: skewY(-11deg);
   background-color: rgb(3, 100, 180);
@@ -27,6 +29,31 @@ p {
   font-family: "Thasadith";
   font-size: 2.5rem;
 }
+header .day-time-container #currentTime {
+  font-family: "Thasadith";
+  color: rgb(68, 130, 201) !important;
+}
+.day-time-container #currentDay {
+  font-family: "Thasadith";
+  color: rgb(210, 233, 252) !important;
+}
+.circle {
+  height: 8rem;
+  width: 8rem;
+  border-radius: 50%;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgb(2, 50, 112) 0%,
+    rgba(4, 109, 191, 1) 44%,
+    rgba(3, 123, 202, 1) 68%,
+    rgba(3, 133, 210, 1) 79%,
+    rgb(2, 177, 221) 97%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+/* --------------- MAIN CONTAINER--------------------------- */
 
 textarea {
   background: transparent;
@@ -81,6 +108,7 @@ textarea {
 }
 .row:hover {
   transform: scale(1.004);
+  opacity: 0.8;
 }
 
 .hour {
@@ -133,29 +161,8 @@ button {
   border-bottom-right-radius: 5px;
 }
 
-.circle {
-  height: 8rem;
-  width: 8rem;
-  border-radius: 50%;
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgb(2, 50, 112) 0%,
-    rgba(4, 109, 191, 1) 44%,
-    rgba(3, 123, 202, 1) 68%,
-    rgba(3, 133, 210, 1) 79%,
-    rgb(2, 177, 221) 97%,
-    rgba(0, 212, 255, 1) 100%
-  );
-}
-#currentTime {
-  font-family: "Thasadith";
-  color: rgb(68, 130, 201);
-}
-#currentDay {
-  font-family: "Thasadith";
-  color: rgb(210, 233, 252);
-}
+
+
 /* --------- footer ------------- */
 footer {
   bottom: 0;
@@ -169,10 +176,11 @@ footer div h1 {
   color: rgb(140, 191, 214);
 }
 
-#alert {
-  color: rgb(2, 2, 136);
+#alert span {
+  color: rgb(16, 199, 71);
   font-size: 0.9rem;
   font-weight: bold;
+  word-spacing: 3px;
 }
 #alert i {
   border: 0.0001px solid rgb(184, 194, 207);

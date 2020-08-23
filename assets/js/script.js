@@ -1,9 +1,10 @@
 var loadPlans = function () {
+  // loop working hours (from 9 to 17) and create a row for each hour
   for (var i = 9; i <= 17; i++) {
-    // change i to start counting from 0
+    // change i to start counting from 0 (for id purpose)
     var planId = parseInt(`${i - 9}`);
 
-    // get data from local storage
+    // get data from local storage for every element Id
     var dataL = localStorage.getItem(`${planId}`);
 
     //create div element
@@ -13,21 +14,23 @@ var loadPlans = function () {
     var eventDescription = $("<p>")
       .addClass("description  p-3 col-sm-8 col-md-9 col-lg-9")
       .text(dataL);
-    //create button element
+    //create button element and disable it
     var eventBtn = $("<button>")
       .addClass("saveBtn col-sm-2 col-md-1 col-lg-1")
-      .html('<i class="far fa-save"></i>');
+      .html('<i class="far fa-save"></i>')
+      .attr("disabled", true);
     // create dive element for time
     var eventTIme = $("<div>")
       .addClass("time-block col-sm-2 bg-light py-2")
       .text(moment(`${i}`, "hh").format(`LT`));
-    // var planId = moment(`${i}`, "hh").format(`h`);
 
+    // Set data-id attribute to each time plan
     eventEL.attr("data-id", planId);
+    // append time, description and buttons to
     eventEL.append(eventTIme, eventDescription, eventBtn);
     $(".container").append(eventEL);
 
-    //-----------------------------------------  AUDIT -----------
+    //--------- CHANGE COLOR OF EACH PLAN BASED ON THE TIME ---------------------------
 
     // get date from task element
     var date = $(eventEL).find("div").text().trim();
@@ -61,6 +64,8 @@ var loadPlans = function () {
     }
   }
 
+  // --------- CREATE TEXTAREA FOR EDITING A PLAN ----------------------------
+
   $(".row").on("click", "p", function () {
     // get the class name before the click happen
     var previousCLass = $(this).closest("p").attr("class");
@@ -76,7 +81,12 @@ var loadPlans = function () {
 
     // focus for text input
     planInput.trigger("focus");
+
+    // enable button click
+    $(".saveBtn").attr("disabled", false);
   });
+
+  // ----------- SAVE WHEN BTN CLICKED ---------------------------------------------
 
   $(".row").on("click", "button", function () {
     // get the textarea's current value/text
@@ -95,17 +105,23 @@ var loadPlans = function () {
 
     // replace textarea with p element
     $(this).siblings(".description").replaceWith(eventDescription);
+
+    // reload the page incase there is reminder
+
+    location.reload();
   });
 
-  // ------------- --------------------------------------Current -time
+  // ------------- RENDER CURRENT TIME TO UI --------------------------
+
   var currentTImeAndDate = moment().format("LL");
   $("#currentDay").text(currentTImeAndDate);
 };
 
-// call moment every second to update the time;
+// -------- CALL TIMER  TO UPDATE THE TIME -----------------------;
 setInterval(function () {
   var currentTime = moment().format("hh:mm:ss A");
   $("#currentTime").text(currentTime);
 }, 1000);
 
+// call to load 
 loadPlans();
