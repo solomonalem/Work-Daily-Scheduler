@@ -8,6 +8,7 @@ p {
   height: 79px;
   font-size: 1.1rem;
 }
+
 .logo {
   transform: skewY(-11deg);
   background-color: rgb(3, 100, 180);
@@ -46,7 +47,7 @@ textarea {
   border-radius: 0;
   border-bottom: 2px solid rgb(3, 93, 196);
   max-height: 40vh;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
   background: rgb(2, 0, 36);
   background: linear-gradient(
     90deg,
@@ -75,11 +76,11 @@ textarea {
   border-top: 1px solid white;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  
+
   font-size: 0.9rem;
 }
 .row:hover {
-  transform:scale(1.004)
+  transform: scale(1.004);
 }
 
 .hour {
@@ -168,3 +169,17 @@ footer div h1 {
   color: rgb(140, 191, 214);
 }
 
+#alert {
+  color: rgb(2, 2, 136);
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+#alert i {
+  border: 0.0001px solid rgb(184, 194, 207);
+  padding: 0.3rem;
+  border-radius: 50%;
+
+  margin-right: 0.5rem;
+  background-color: rgb(219, 221, 236);
+  box-shadow: 1px 1px 5px 1px rgb(156, 178, 226);
+}
