@@ -48,18 +48,25 @@ var loadPlans = function () {
 
       // $(eventEL).addClass("present");
     } else if (Math.abs(moment().diff(scheduleTime, "hour")) <= 0) {
+      // get the time
       var ScheduleText = $(eventDescription).text();
+
+      // if there is schedule for the next hour
       if (ScheduleText) {
+        // create reminder element
         var reminder = $('<i class="far fa-bell"></i>');
         var alert = $("<span>").text(
           ` Get ready for " ${ScheduleText} " at - ${scheduleTime.format(
             "hh:mm A"
           )} `
         );
+        // append it to the alert element in the container element
         $("#alert").append(reminder, alert);
       }
       $(eventDescription).addClass("present");
-    } else {
+    }
+    // $(eventEL).addClass("future");
+    else {
       $(eventDescription).addClass("future");
     }
   }
@@ -123,5 +130,5 @@ setInterval(function () {
   $("#currentTime").text(currentTime);
 }, 1000);
 
-// call to load 
+//---- call to load  ------
 loadPlans();
